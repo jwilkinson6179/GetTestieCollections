@@ -1,24 +1,69 @@
 package rocks.zipcode;
 
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
 import static org.junit.Assert.*;
 import java.util.Stack;
 
 public class TestStack {
 
-    @org.junit.Before
+    @Before
     public void setUp() throws Exception {
     }
 
-    @org.junit.After
+    @After
     public void tearDown() throws Exception {
     }
 
-    @org.junit.Test
+    @Test
     public void TestStack1() {
         Stack<String> stack = new Stack<>();
         stack.push("Hello world");
         assertEquals(false, stack.isEmpty()); // false
     }
 
-    // Make a bigger test exercising more Stack methods.....
+    @Test
+    public void PushAndPopTest()
+    {
+        // GIVEN
+        String expected = "world";
+        Stack<String> testStack = new Stack<>();
+        testStack.push("Hello");
+        testStack.push("world");
+
+        // WHEN
+
+        String actual = testStack.pop();
+
+        // THEN
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void PushPushPopPeek()
+    {
+        // GIVEN
+
+        String expectedFirst = "world";
+        String expectedSecond = "Hello";
+        Stack<String> testStack = new Stack<>();
+        Boolean expected = false;
+
+        // WHEN
+
+        testStack.push("Hello");
+        testStack.push("world");
+        String actualFirst = testStack.pop();
+        String actualSecond = testStack.peek();
+        Boolean actual = testStack.isEmpty();
+
+        // THEN
+
+        assertEquals(expectedFirst, actualFirst);
+        assertEquals(expectedSecond, actualSecond);
+        assertEquals(expected, actual);
+    }
 }
