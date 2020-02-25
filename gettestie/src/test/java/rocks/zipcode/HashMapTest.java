@@ -49,4 +49,27 @@ public class HashMapTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void fullTheater()
+    {
+        HashMap<String, Person> reservation = new HashMap<>();
+        String seatA = "1A";
+        String seatB = "1B";
+        String seatC = "1C";
+        Person personA = new Person("Robert", 1983);
+        Person personB = new Person("Harry", 1981);
+        Person personC = new Person ("Marie", 1993);
+        Person personD = new Person("James", 1979);
+
+        reservation.putIfAbsent(seatA, personA);
+        reservation.putIfAbsent(seatB, personB);
+        reservation.putIfAbsent(seatC, personC);
+        reservation.putIfAbsent(seatA, personD);
+
+        assertEquals(personA, reservation.get(seatA));
+        assertNotEquals(personD, reservation.get(seatA));
+        assertEquals(personB, reservation.get(seatB));
+        assertEquals(personC, reservation.get(seatC));
+    }
 }
