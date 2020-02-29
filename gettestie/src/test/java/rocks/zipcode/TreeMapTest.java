@@ -21,9 +21,9 @@ public class TreeMapTest {
         Person me = new Person("Carrie", 1979);
         Person marie = new Person("Marie", 1993);
 
-        Address home = new Address("Apple Rd.", "Wilmington", "19805");
-        Address sisterHome = new Address("Creek Bend", "Newark", "19717");
-        Address strangerHome = new Address("Detroit St.", "Denver", "80154");
+        Address home = new Address("Apple Rd.", "Wilmington", 19805);
+        Address sisterHome = new Address("Creek Bend", "Newark", 19717);
+        Address strangerHome = new Address("Detroit St.", "Denver", 80154);
 
         addressBook.put(mom, home);
         addressBook.put(dad, home);

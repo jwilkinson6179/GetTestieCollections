@@ -44,7 +44,7 @@ public class Person {
     /**
      * Set a new address for this person.
      */
-    public void setAddress(String street, String town, String postCode) {
+    public void setAddress(String street, String town, Integer postCode) {
         address = new Address(street, town, postCode);
     }
 

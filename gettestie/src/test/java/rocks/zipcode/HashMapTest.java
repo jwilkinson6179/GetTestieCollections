@@ -16,7 +16,7 @@ public class HashMapTest {
         // GIVEN
 
         addyBook = new HashMap<>();
-        Address contact = new Address("2700 Apple Rd.", "Wilmington", "19805");
+        Address contact = new Address("2700 Apple Rd.", "Wilmington", 19805);
         Person mom = new Person("Deb", 1953);
         Person dad = new Person("Gary", 1953);
 
